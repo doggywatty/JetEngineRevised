@@ -1,0 +1,5 @@
+// libs/glsociallib/include/common/glsociallib_default_config.h
+#ifndef LIBS_GLSOCIALLIB_INCLUDE_COMMON_GLSOCIALLIB_DEFAULT_CONFIG_H
+#define LIBS_GLSOCIALLIB_INCLUDE_COMMON_GLSOCIALLIB_DEFAULT_CONFIG_H
+
+#endif

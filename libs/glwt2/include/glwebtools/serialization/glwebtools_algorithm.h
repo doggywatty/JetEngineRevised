@@ -1,0 +1,5 @@
+// libs/glwt2/include/glwebtools/serialization/glwebtools_algorithm.h
+#ifndef LIBS_GLWT2_INCLUDE_GLWEBTOOLS_SERIALIZATION_GLWEBTOOLS_ALGORITHM_H
+#define LIBS_GLWT2_INCLUDE_GLWEBTOOLS_SERIALIZATION_GLWEBTOOLS_ALGORITHM_H
+
+#endif

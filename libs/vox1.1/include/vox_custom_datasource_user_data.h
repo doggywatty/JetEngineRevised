@@ -1,0 +1,5 @@
+// libs/vox1.1/include/vox_custom_datasource_user_data.h
+#ifndef LIBS_VOX1_1_INCLUDE_VOX_CUSTOM_DATASOURCE_USER_DATA_H
+#define LIBS_VOX1_1_INCLUDE_VOX_CUSTOM_DATASOURCE_USER_DATA_H
+
+#endif

@@ -1,0 +1,5 @@
+// framework/include/movements/movementconstants.h
+#ifndef FRAMEWORK_INCLUDE_MOVEMENTS_MOVEMENTCONSTANTS_H
+#define FRAMEWORK_INCLUDE_MOVEMENTS_MOVEMENTCONSTANTS_H
+
+#endif

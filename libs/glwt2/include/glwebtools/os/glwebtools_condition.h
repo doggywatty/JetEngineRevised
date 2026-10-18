@@ -1,0 +1,5 @@
+// libs/glwt2/include/glwebtools/os/glwebtools_condition.h
+#ifndef LIBS_GLWT2_INCLUDE_GLWEBTOOLS_OS_GLWEBTOOLS_CONDITION_H
+#define LIBS_GLWT2_INCLUDE_GLWEBTOOLS_OS_GLWEBTOOLS_CONDITION_H
+
+#endif

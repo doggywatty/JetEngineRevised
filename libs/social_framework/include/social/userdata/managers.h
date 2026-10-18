@@ -1,0 +1,5 @@
+// libs/social_framework/include/social/userdata/managers.h
+#ifndef LIBS_SOCIAL_FRAMEWORK_INCLUDE_SOCIAL_USERDATA_MANAGERS_H
+#define LIBS_SOCIAL_FRAMEWORK_INCLUDE_SOCIAL_USERDATA_MANAGERS_H
+
+#endif

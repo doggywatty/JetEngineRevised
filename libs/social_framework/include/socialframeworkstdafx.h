@@ -1,0 +1,5 @@
+// libs/social_framework/include/socialframeworkstdafx.h
+#ifndef LIBS_SOCIAL_FRAMEWORK_INCLUDE_SOCIALFRAMEWORKSTDAFX_H
+#define LIBS_SOCIAL_FRAMEWORK_INCLUDE_SOCIALFRAMEWORKSTDAFX_H
+
+#endif

@@ -1,0 +1,5 @@
+// libs/glwt2/include/glwebtools/os/glwebtools_systemclock.h
+#ifndef LIBS_GLWT2_INCLUDE_GLWEBTOOLS_OS_GLWEBTOOLS_SYSTEMCLOCK_H
+#define LIBS_GLWT2_INCLUDE_GLWEBTOOLS_OS_GLWEBTOOLS_SYSTEMCLOCK_H
+
+#endif

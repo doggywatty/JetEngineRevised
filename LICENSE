@@ -1,0 +1,56 @@
+.AV Minion Rush License, Version 1.0
+
+Copyright (c) 2023 'Luxorin Games' All rights reserved, except as granted below.
+
+1. Scope
+
+This license covers the original source code and documentation in this repository that were written by the copyright
+holder. It does not grant any rights in:
+
+  (a) third-party components, such as the libraries under libs/ and the other components named in THIRD_PARTY, which
+      remain under their own licenses; or
+
+  (b) any material owned by someone other than the copyright holder, including the game code, SDK libraries and game
+      data of the commercial game that this project reverse-engineers. Use of that material requires permission from
+      its rights holder.
+
+2. Permission
+
+Subject to section 3, you may use, copy, modify and distribute the covered code for any purpose, including commercial
+purposes.
+
+3. Public projects must be open source
+
+If you use any covered code in a project, and that project is public, you must release the complete corresponding
+source code of the project, under an open source license approved by the Open Source Initiative, and you must keep the
+copyright and license notices of the covered code. This condition has no exceptions for public projects.
+
+4. Private projects
+
+A project that is private is not subject to section 3. Private projects may use the covered code under sections 1, 2,
+5 and 6 without releasing their source.
+
+5. Definitions
+
+"Public": a project is public if any of the following is true:
+  - its source code is published;
+  - it, or any binary built from it, is distributed to anyone outside your own organization; or
+  - it is made available over a network to people outside your organization in a way that lets them use it, including
+    a hosted service.
+
+"Private": a project that is not public.
+
+"Open source": the complete source code is available to anyone without restriction, under an open source license
+approved by the Open Source Initiative.
+
+6. No other rights
+
+This license grants no rights to use the names, logos or trademarks of the copyright holder or of any third party.
+Any use that does not comply with this license is not licensed.
+
+7. No warranty
+
+THE COVERED CODE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE COVERED CODE OR THE USE OR OTHER DEALINGS IN IT.

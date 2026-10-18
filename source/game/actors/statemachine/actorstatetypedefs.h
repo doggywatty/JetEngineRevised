@@ -1,0 +1,5 @@
+// source/game/actors/statemachine/actorstatetypedefs.h
+#ifndef SOURCE_GAME_ACTORS_STATEMACHINE_ACTORSTATETYPEDEFS_H
+#define SOURCE_GAME_ACTORS_STATEMACHINE_ACTORSTATETYPEDEFS_H
+
+#endif

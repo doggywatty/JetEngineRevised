@@ -1,0 +1,5 @@
+// libs/glwt2/include/glwebtools/os/glwebtools_console.h
+#ifndef LIBS_GLWT2_INCLUDE_GLWEBTOOLS_OS_GLWEBTOOLS_CONSOLE_H
+#define LIBS_GLWT2_INCLUDE_GLWEBTOOLS_OS_GLWEBTOOLS_CONSOLE_H
+
+#endif

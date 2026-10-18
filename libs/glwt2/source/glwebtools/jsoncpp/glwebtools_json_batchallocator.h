@@ -1,0 +1,5 @@
+// libs/glwt2/source/glwebtools/jsoncpp/glwebtools_json_batchallocator.h
+#ifndef LIBS_GLWT2_SOURCE_GLWEBTOOLS_JSONCPP_GLWEBTOOLS_JSON_BATCHALLOCATOR_H
+#define LIBS_GLWT2_SOURCE_GLWEBTOOLS_JSONCPP_GLWEBTOOLS_JSON_BATCHALLOCATOR_H
+
+#endif

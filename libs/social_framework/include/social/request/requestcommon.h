@@ -1,0 +1,5 @@
+// libs/social_framework/include/social/request/requestcommon.h
+#ifndef LIBS_SOCIAL_FRAMEWORK_INCLUDE_SOCIAL_REQUEST_REQUESTCOMMON_H
+#define LIBS_SOCIAL_FRAMEWORK_INCLUDE_SOCIAL_REQUEST_REQUESTCOMMON_H
+
+#endif

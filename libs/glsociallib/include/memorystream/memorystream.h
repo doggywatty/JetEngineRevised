@@ -1,0 +1,5 @@
+// libs/glsociallib/include/memorystream/memorystream.h
+#ifndef LIBS_GLSOCIALLIB_INCLUDE_MEMORYSTREAM_MEMORYSTREAM_H
+#define LIBS_GLSOCIALLIB_INCLUDE_MEMORYSTREAM_MEMORYSTREAM_H
+
+#endif

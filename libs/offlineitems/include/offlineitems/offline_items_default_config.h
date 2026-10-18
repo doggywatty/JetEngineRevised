@@ -1,0 +1,5 @@
+// libs/offlineitems/include/offlineitems/offline_items_default_config.h
+#ifndef LIBS_OFFLINEITEMS_INCLUDE_OFFLINEITEMS_OFFLINE_ITEMS_DEFAULT_CONFIG_H
+#define LIBS_OFFLINEITEMS_INCLUDE_OFFLINEITEMS_OFFLINE_ITEMS_DEFAULT_CONFIG_H
+
+#endif

@@ -1,0 +1,5 @@
+// libs/glwt2/include/glwebtools/serialization/glwebtools_typetraits.h
+#ifndef LIBS_GLWT2_INCLUDE_GLWEBTOOLS_SERIALIZATION_GLWEBTOOLS_TYPETRAITS_H
+#define LIBS_GLWT2_INCLUDE_GLWEBTOOLS_SERIALIZATION_GLWEBTOOLS_TYPETRAITS_H
+
+#endif

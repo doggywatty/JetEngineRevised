@@ -1,0 +1,5 @@
+// libs/offlineitems/include/offlineitems/internal/oi_console.h
+#ifndef LIBS_OFFLINEITEMS_INCLUDE_OFFLINEITEMS_INTERNAL_OI_CONSOLE_H
+#define LIBS_OFFLINEITEMS_INCLUDE_OFFLINEITEMS_INTERNAL_OI_CONSOLE_H
+
+#endif

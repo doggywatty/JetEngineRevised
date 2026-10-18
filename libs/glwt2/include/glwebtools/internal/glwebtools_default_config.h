@@ -1,0 +1,5 @@
+// libs/glwt2/include/glwebtools/internal/glwebtools_default_config.h
+#ifndef LIBS_GLWT2_INCLUDE_GLWEBTOOLS_INTERNAL_GLWEBTOOLS_DEFAULT_CONFIG_H
+#define LIBS_GLWT2_INCLUDE_GLWEBTOOLS_INTERNAL_GLWEBTOOLS_DEFAULT_CONFIG_H
+
+#endif

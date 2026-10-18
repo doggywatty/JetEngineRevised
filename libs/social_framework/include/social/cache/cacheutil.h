@@ -1,0 +1,5 @@
+// libs/social_framework/include/social/cache/cacheutil.h
+#ifndef LIBS_SOCIAL_FRAMEWORK_INCLUDE_SOCIAL_CACHE_CACHEUTIL_H
+#define LIBS_SOCIAL_FRAMEWORK_INCLUDE_SOCIAL_CACHE_CACHEUTIL_H
+
+#endif

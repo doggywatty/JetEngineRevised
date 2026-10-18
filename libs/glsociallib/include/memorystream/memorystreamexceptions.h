@@ -1,0 +1,5 @@
+// libs/glsociallib/include/memorystream/memorystreamexceptions.h
+#ifndef LIBS_GLSOCIALLIB_INCLUDE_MEMORYSTREAM_MEMORYSTREAMEXCEPTIONS_H
+#define LIBS_GLSOCIALLIB_INCLUDE_MEMORYSTREAM_MEMORYSTREAMEXCEPTIONS_H
+
+#endif

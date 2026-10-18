@@ -1,0 +1,5 @@
+// libs/localization_lib/include/localization/converter.h
+#ifndef LIBS_LOCALIZATION_LIB_INCLUDE_LOCALIZATION_CONVERTER_H
+#define LIBS_LOCALIZATION_LIB_INCLUDE_LOCALIZATION_CONVERTER_H
+
+#endif

@@ -1,0 +1,5 @@
+// libs/social_framework/include/social/onlinestatus.h
+#ifndef LIBS_SOCIAL_FRAMEWORK_INCLUDE_SOCIAL_ONLINESTATUS_H
+#define LIBS_SOCIAL_FRAMEWORK_INCLUDE_SOCIAL_ONLINESTATUS_H
+
+#endif

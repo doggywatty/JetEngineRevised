@@ -1,0 +1,5 @@
+// libs/social_framework/include/social/userdata/group.h
+#ifndef LIBS_SOCIAL_FRAMEWORK_INCLUDE_SOCIAL_USERDATA_GROUP_H
+#define LIBS_SOCIAL_FRAMEWORK_INCLUDE_SOCIAL_USERDATA_GROUP_H
+
+#endif

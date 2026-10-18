@@ -1,0 +1,5 @@
+// libs/offlineitems/include/offlineitems/internal/validators.h
+#ifndef LIBS_OFFLINEITEMS_INCLUDE_OFFLINEITEMS_INTERNAL_VALIDATORS_H
+#define LIBS_OFFLINEITEMS_INCLUDE_OFFLINEITEMS_INTERNAL_VALIDATORS_H
+
+#endif

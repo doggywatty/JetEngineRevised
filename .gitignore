@@ -1,0 +1,11 @@
+.DS_Store
+__pycache__/
+/build/
+/data/
+/savegame/
+
+# Game binaries and game data (proprietary; never commit)
+/data.zip
+/.minion rush stuff for reversal/
+*.apk
+*.whl

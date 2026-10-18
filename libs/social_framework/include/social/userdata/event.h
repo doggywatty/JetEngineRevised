@@ -1,0 +1,5 @@
+// libs/social_framework/include/social/userdata/event.h
+#ifndef LIBS_SOCIAL_FRAMEWORK_INCLUDE_SOCIAL_USERDATA_EVENT_H
+#define LIBS_SOCIAL_FRAMEWORK_INCLUDE_SOCIAL_USERDATA_EVENT_H
+
+#endif

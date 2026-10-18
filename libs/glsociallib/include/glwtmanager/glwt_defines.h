@@ -1,0 +1,5 @@
+// libs/glsociallib/include/glwtmanager/glwt_defines.h
+#ifndef LIBS_GLSOCIALLIB_INCLUDE_GLWTMANAGER_GLWT_DEFINES_H
+#define LIBS_GLSOCIALLIB_INCLUDE_GLWTMANAGER_GLWT_DEFINES_H
+
+#endif

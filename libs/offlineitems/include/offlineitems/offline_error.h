@@ -1,0 +1,5 @@
+// libs/offlineitems/include/offlineitems/offline_error.h
+#ifndef LIBS_OFFLINEITEMS_INCLUDE_OFFLINEITEMS_OFFLINE_ERROR_H
+#define LIBS_OFFLINEITEMS_INCLUDE_OFFLINEITEMS_OFFLINE_ERROR_H
+
+#endif

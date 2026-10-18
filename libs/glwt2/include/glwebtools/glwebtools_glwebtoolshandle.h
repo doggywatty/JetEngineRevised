@@ -1,0 +1,5 @@
+// libs/glwt2/include/glwebtools/glwebtools_glwebtoolshandle.h
+#ifndef LIBS_GLWT2_INCLUDE_GLWEBTOOLS_GLWEBTOOLS_GLWEBTOOLSHANDLE_H
+#define LIBS_GLWT2_INCLUDE_GLWEBTOOLS_GLWEBTOOLS_GLWEBTOOLSHANDLE_H
+
+#endif

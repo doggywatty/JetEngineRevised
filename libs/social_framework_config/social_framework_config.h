@@ -1,0 +1,5 @@
+// libs/social_framework_config/social_framework_config.h
+#ifndef LIBS_SOCIAL_FRAMEWORK_CONFIG_SOCIAL_FRAMEWORK_CONFIG_H
+#define LIBS_SOCIAL_FRAMEWORK_CONFIG_SOCIAL_FRAMEWORK_CONFIG_H
+
+#endif

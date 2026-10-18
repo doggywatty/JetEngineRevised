@@ -1,0 +1,5 @@
+// libs/social_framework/include/social/eventconstants.h
+#ifndef LIBS_SOCIAL_FRAMEWORK_INCLUDE_SOCIAL_EVENTCONSTANTS_H
+#define LIBS_SOCIAL_FRAMEWORK_INCLUDE_SOCIAL_EVENTCONSTANTS_H
+
+#endif

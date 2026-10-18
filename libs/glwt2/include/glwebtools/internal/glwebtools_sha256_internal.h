@@ -1,0 +1,5 @@
+// libs/glwt2/include/glwebtools/internal/glwebtools_sha256_internal.h
+#ifndef LIBS_GLWT2_INCLUDE_GLWEBTOOLS_INTERNAL_GLWEBTOOLS_SHA256_INTERNAL_H
+#define LIBS_GLWT2_INCLUDE_GLWEBTOOLS_INTERNAL_GLWEBTOOLS_SHA256_INTERNAL_H
+
+#endif

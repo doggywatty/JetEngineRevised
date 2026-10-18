@@ -1,0 +1,5 @@
+// libs/glwt2/include/glwebtools/internal/glwebtools_urlrequest.h
+#ifndef LIBS_GLWT2_INCLUDE_GLWEBTOOLS_INTERNAL_GLWEBTOOLS_URLREQUEST_H
+#define LIBS_GLWT2_INCLUDE_GLWEBTOOLS_INTERNAL_GLWEBTOOLS_URLREQUEST_H
+
+#endif

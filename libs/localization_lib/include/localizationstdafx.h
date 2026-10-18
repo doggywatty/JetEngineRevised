@@ -1,0 +1,5 @@
+// libs/localization_lib/include/localizationstdafx.h
+#ifndef LIBS_LOCALIZATION_LIB_INCLUDE_LOCALIZATIONSTDAFX_H
+#define LIBS_LOCALIZATION_LIB_INCLUDE_LOCALIZATIONSTDAFX_H
+
+#endif

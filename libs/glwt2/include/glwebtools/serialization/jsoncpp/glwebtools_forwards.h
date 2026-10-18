@@ -1,0 +1,5 @@
+// libs/glwt2/include/glwebtools/serialization/jsoncpp/glwebtools_forwards.h
+#ifndef LIBS_GLWT2_INCLUDE_GLWEBTOOLS_SERIALIZATION_JSONCPP_GLWEBTOOLS_FORWARDS_H
+#define LIBS_GLWT2_INCLUDE_GLWEBTOOLS_SERIALIZATION_JSONCPP_GLWEBTOOLS_FORWARDS_H
+
+#endif

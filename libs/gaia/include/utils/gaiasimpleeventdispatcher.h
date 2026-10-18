@@ -1,0 +1,5 @@
+// libs/gaia/include/utils/gaiasimpleeventdispatcher.h
+#ifndef LIBS_GAIA_INCLUDE_UTILS_GAIASIMPLEEVENTDISPATCHER_H
+#define LIBS_GAIA_INCLUDE_UTILS_GAIASIMPLEEVENTDISPATCHER_H
+
+#endif

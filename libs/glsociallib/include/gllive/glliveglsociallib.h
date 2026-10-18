@@ -1,0 +1,5 @@
+// libs/glsociallib/include/gllive/glliveglsociallib.h
+#ifndef LIBS_GLSOCIALLIB_INCLUDE_GLLIVE_GLLIVEGLSOCIALLIB_H
+#define LIBS_GLSOCIALLIB_INCLUDE_GLLIVE_GLLIVEGLSOCIALLIB_H
+
+#endif

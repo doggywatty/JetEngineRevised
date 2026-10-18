@@ -1,0 +1,5 @@
+// libs/glsociallib/include/gllive/gllivesnswrapper.h
+#ifndef LIBS_GLSOCIALLIB_INCLUDE_GLLIVE_GLLIVESNSWRAPPER_H
+#define LIBS_GLSOCIALLIB_INCLUDE_GLLIVE_GLLIVESNSWRAPPER_H
+
+#endif
