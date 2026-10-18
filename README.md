@@ -2,7 +2,9 @@
 
 A continuation of AV's/dotxr WIP open-source reimplementation of GameLoft's Jet Game Engine, along with a editor.
 
-# Original Description
+---
+
+## Original Description
 A reconstruction, highly buggy, remake of the engine and game code of Gameloft's *Minion Rush*
 This repo contains no actual code from minion rush, everything here was reverse engineered slowly over 2 years since 2024
 
