@@ -5,7 +5,13 @@
 #include "system.h"
 #include "colorprofiles.h"
 #include <json/json.h>
+#ifdef _WIN32
+#include <string.h>
+#define strcasecmp _stricmp
+#define strncasecmp _strnicmp
+#else
 #include <strings.h>
+#endif
 
 static void ApplyToggles(const Json::Value &p, PlatformToggles &t) {
     if (!p.isObject()) return;

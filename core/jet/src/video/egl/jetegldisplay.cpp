@@ -214,4 +214,48 @@ void JetEGLDisplay::SetLocked(bool l) { m_locked = l; }
 
 }
 
+#elif defined(_WIN32)
+
+// theres nothing
+#include "video/egl/jetegldisplay.h"
+#include <cstdio>
+
+namespace jet::video {
+
+JetEGLDisplay::JetEGLDisplay(void *, JetEGLDisplay *) : m_size(0, 0), m_clientVersion(2), m_locked(false) {}
+
+JetEGLDisplay::~JetEGLDisplay() {}
+
+unsigned JetEGLDisplay::GetClassId() { return 0x45474C; }
+
+bool JetEGLDisplay::Init(const DisplayMode &mode) {
+    m_mode = mode;
+    m_size = mode.size;
+    std::printf("JetEGLDisplay (Windows stub): Init mode %ux%u\n", m_size.x, m_size.y);
+    return true;
+}
+
+safe_enum<Display::StateDef, Display::StateDef::type> JetEGLDisplay::GetState() { return StateDef::Active; }
+DisplayMode JetEGLDisplay::GetMode() { return m_mode; }
+void JetEGLDisplay::SetOrientation(safe_enum<OrientationDef, OrientationDef::type>) {}
+safe_enum<Display::OrientationDef, Display::OrientationDef::type> JetEGLDisplay::GetOrientation() { return OrientationDef::LandscapeLeft; }
+math::vec2<unsigned int> JetEGLDisplay::GetSize() { return m_size; }
+math::vec2<unsigned int> JetEGLDisplay::GetNativeSize() { return m_size; }
+const boost::shared_ptr<RenderTarget> &JetEGLDisplay::GetRenderTarget() { return m_renderTarget; }
+
+void JetEGLDisplay::Swap() {}
+void JetEGLDisplay::Disconnect() {}
+void JetEGLDisplay::SetLocked(bool l) { m_locked = l; }
+bool JetEGLDisplay::IsLocked() { return m_locked; }
+void* JetEGLDisplay::GetContext() { return nullptr; }
+void* JetEGLDisplay::CreateSharedContext() { return nullptr; }
+bool JetEGLDisplay::SetThreadContext(void *) { return true; }
+void JetEGLDisplay::Cleanup() {}
+bool JetEGLDisplay::MakeCurrent() { return true; }
+boost::shared_ptr<RenderTarget> JetEGLDisplay::CreateCompatibleRenderTarget() { return boost::shared_ptr<RenderTarget>(); }
+const boost::shared_ptr<RenderTarget> &JetEGLDisplay::CreatePostEffectRenderTarget(unsigned, unsigned) { return m_renderTarget; }
+boost::shared_ptr<RenderTarget> JetEGLDisplay::GetPostEffectRenderTarget(unsigned) { return boost::shared_ptr<RenderTarget>(); }
+
+}
+
 #endif

@@ -10,6 +10,11 @@
 
 #include <string>
 
+#if defined(_WIN32)
+#define NOMINMAX
+#include <windows.h>
+#endif
+
 namespace jet::video {
 class Display;
 }
@@ -36,6 +41,10 @@ public:
     jet::video::Display *GlDisplay() const;
     // The GL framebuffer the editor's frame goes into: the window's own (0) on Linux, the display's render target on macOS.
     unsigned Framebuffer() const;
+
+#if defined(_WIN32)
+    friend LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
+#endif
 
 private:
     struct Impl;

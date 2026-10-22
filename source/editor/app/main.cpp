@@ -21,9 +21,11 @@
 #include "editor/world/world.h"
 #include "video/displaymode.h"
 
-#include <unistd.h>
-
 #include <cstdint>
+#ifdef _WIN32
+#include <windows.h>
+#define usleep(us) Sleep((us) / 1000)
+#endif
 #include <cstdio>
 #include <cstdlib>
 #include <filesystem>

@@ -9,3 +9,6 @@ __pycache__/
 /.minion rush stuff for reversal/
 *.apk
 *.whl
+/boost_1_87_0
+build_win.bat
+boost.tar.bz2

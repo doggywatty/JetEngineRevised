@@ -14,7 +14,12 @@
 #include <cmath>
 #include <cstdlib>
 #include <cstdio>
+#ifdef _WIN32
+#include <string.h>
+#define strncasecmp _strnicmp
+#else
 #include <strings.h>
+#endif
 #include <cstring>
 
 jet::String Deco3d::k_tmplName("Deco3d");

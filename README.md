@@ -12,13 +12,30 @@ It is built from the game's debug symbols (a PDB for the 0.0.3 Windows test buil
 
 ## Building
 
-The project is a C++17 codebase built with CMake (minimum 3.16).</br>
-It produces static core libraries, vendored static libs, the `game` static library on top of the framework and the `jeteditor` executable (source/editor).
+The project is a C++17 codebase built with CMake (minimum 3.16). It produces static core libraries, vendored static libs, the `game` static library on top of the framework, and the `jeteditor` executable (source/editor).
+
+### Dependencies
+
+- Boost: download from https://www.boost.org and extract, then point CMake to it with `-DBOOST_ROOT=<path>`
 
 ### Quick build
 
 ```sh
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build -j
+```
+
+On Windows with Visual Studio 2022:
+
+```sh
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -G "Visual Studio 17 2022" -A x64 -DBOOST_ROOT=<path-to-boost>
+cmake --build build --config Release -j
+```
+
+Or with Ninja + MSVC:
+
+```sh
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -G Ninja -DBOOST_ROOT=<path-to-boost>
 cmake --build build -j
 ```
 
@@ -34,9 +51,21 @@ cmake --build build -j
 ctest --test-dir build
 ```
 
-### Platforms
+### Running on Windows
 
-Currently supports Windows, Linux, and macOS, providing cross-platform compatibility across the three major desktop operating systems.
+EGL is not available on Windows, so the editor uses **WGL** (native Windows OpenGL) instead. After building, run `jeteditor.exe` with a TrueType font:
+
+```sh
+build\jeteditor.exe --font "C:\Windows\Fonts\arial.ttf"
+```
+
+Other command-line options:
+- `--world <dataDir>`: open a MinionRush data folder in edit mode
+- `--select <n>`: select entity index once loaded
+- `--shot <file.ppm>`: write a PPM screenshot after loading
+- `--selftest <project>`: headless project check
+- `--new <folder> <name>`: create a new project
+- `--import <project> <file>`: import an asset
 
 ## License
 

@@ -1,13 +1,14 @@
 // source/editor/app/window.cpp
 #include "editor/app/window.h"
 
-// macOS has its own window (window_mac.mm); this file is the X11 window and the fallback for other platforms
-#if !defined(__APPLE__)
+// macOS has its own window (window_mac.mm); this file handles Linux (X11), Windows (Win32), and the fallback.
 
 // The engine's headers come first: X11 defines None, Bool and Status, which the engine's enums also use.
 #include "video/displaymode.h"
 #if defined(__linux__)
 #include "video/egl/jetegldisplay.h"
+#elif defined(_WIN32)
+#include "video/win32display.h"
 #endif
 
 #include <cstdint>
@@ -16,6 +17,9 @@
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
 #include <X11/keysym.h>
+#elif defined(_WIN32)
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
 #endif
 
 namespace jeteditor::app {
@@ -193,7 +197,166 @@ jet::video::Display *Window::GlDisplay() const { return impl_->egl; }
 
 unsigned Window::Framebuffer() const { return 0; }  // the EGL window surface is framebuffer 0
 
-#else  // not Linux
+#elif defined(_WIN32)
+
+struct Window::Impl {
+    HWND hwnd = nullptr;
+    jet::video::Win32Display *display = nullptr;
+    int width = 0, height = 0;
+    float mouseX = 0, mouseY = 0;
+    bool mouseDown = false;
+};
+
+Window::Window() : impl_(new Impl) {}
+
+Window::~Window() {
+    Close();
+    delete impl_;
+}
+
+static LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
+    Window *self = nullptr;
+    if (msg == WM_NCCREATE) {
+        auto *cs = reinterpret_cast<CREATESTRUCTA *>(lParam);
+        self = static_cast<Window *>(cs->lpCreateParams);
+        SetWindowLongPtrA(hwnd, GWLP_USERDATA, reinterpret_cast<LONG_PTR>(self));
+    } else {
+        self = reinterpret_cast<Window *>(GetWindowLongPtrA(hwnd, GWLP_USERDATA));
+    }
+    if (!self) return DefWindowProcA(hwnd, msg, wParam, lParam);
+
+    auto &impl = *self->impl_;
+    switch (msg) {
+    case WM_CLOSE:
+        DestroyWindow(hwnd);
+        return 0;
+    case WM_DESTROY:
+        PostQuitMessage(0);
+        return 0;
+    case WM_SIZE:
+        impl.width = static_cast<int>(LOWORD(lParam));
+        impl.height = static_cast<int>(HIWORD(lParam));
+        return 0;
+    case WM_MOUSEMOVE:
+        impl.mouseX = static_cast<float>(LOWORD(lParam));
+        impl.mouseY = static_cast<float>(HIWORD(lParam));
+        return 0;
+    case WM_LBUTTONDOWN:
+        impl.mouseDown = true;
+        return 0;
+    case WM_LBUTTONUP:
+        impl.mouseDown = false;
+        return 0;
+    case WM_MOUSEWHEEL:
+        impl.mouseX = static_cast<float>(LOWORD(lParam));
+        impl.mouseY = static_cast<float>(HIWORD(lParam));
+        return 0;
+    default:
+        return DefWindowProcA(hwnd, msg, wParam, lParam);
+    }
+}
+
+bool Window::Open(const std::string &title, int width, int height, std::string &error) {
+    if (impl_->hwnd) {
+        error = "the window is already open";
+        return false;
+    }
+
+    HINSTANCE hinst = GetModuleHandleA(nullptr);
+
+    WNDCLASSEXA wc = {};
+    wc.cbSize = sizeof(WNDCLASSEXA);
+    wc.lpfnWndProc = WndProc;
+    wc.hInstance = hinst;
+    wc.lpszClassName = "JetEditorWindowClass";
+    if (!RegisterClassExA(&wc)) {
+        error = "cannot register window class";
+        return false;
+    }
+
+    DWORD style = WS_OVERLAPPEDWINDOW | WS_VISIBLE;
+    RECT rect = {0, 0, width, height};
+    AdjustWindowRect(&rect, style, FALSE);
+    int w = rect.right - rect.left;
+    int h = rect.bottom - rect.top;
+
+    HWND hwnd = CreateWindowExA(0, "JetEditorWindowClass", title.c_str(), style,
+                                CW_USEDEFAULT, CW_USEDEFAULT, w, h,
+                                nullptr, nullptr, hinst, this);
+    if (!hwnd) {
+        error = "cannot create window";
+        return false;
+    }
+
+    impl_->hwnd = hwnd;
+    impl_->width = width;
+    impl_->height = height;
+
+    impl_->display = new jet::video::Win32Display(hwnd);
+    jet::video::DisplayMode mode;
+    mode.size.x = static_cast<unsigned int>(width);
+    mode.size.y = static_cast<unsigned int>(height);
+    if (!impl_->display->Init(mode)) {
+        error = "WGL setup failed for the editor window";
+        Close();
+        return false;
+    }
+    return true;
+}
+
+void Window::Close() {
+    if (impl_->display) {
+        delete impl_->display;
+        impl_->display = nullptr;
+    }
+    if (impl_->hwnd) {
+        DestroyWindow(impl_->hwnd);
+        impl_->hwnd = nullptr;
+    }
+}
+
+bool Window::IsOpen() const { return impl_->hwnd != nullptr && impl_->display != nullptr; }
+
+void Window::Poll(ui::Input &input, bool &closeRequested, bool &anyEvent) {
+    input.pressed = false;
+    input.released = false;
+    input.wheel = 0;
+    input.typed.clear();
+    input.enter = input.escape = input.backspace = input.tab = false;
+    closeRequested = false;
+    anyEvent = false;
+    if (!IsOpen()) return;
+
+    MSG msg;
+    while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)) {
+        if (msg.message == WM_QUIT) {
+            closeRequested = true;
+            return;
+        }
+        TranslateMessage(&msg);
+        DispatchMessageA(&msg);
+        anyEvent = true;
+    }
+
+    input.mouseX = impl_->mouseX;
+    input.mouseY = impl_->mouseY;
+    input.mouseDown = impl_->mouseDown;
+}
+
+void Window::Size(int &width, int &height) const {
+    width = impl_->width;
+    height = impl_->height;
+}
+
+void Window::Swap() {
+    if (impl_->display) impl_->display->Swap();
+}
+
+jet::video::Display *Window::GlDisplay() const { return impl_->display; }
+
+unsigned Window::Framebuffer() const { return 0; }
+
+#else  // not Linux, not Windows (macOS fallback handled by window_mac.mm)
 
 struct Window::Impl {};
 
@@ -223,5 +386,3 @@ unsigned Window::Framebuffer() const { return 0; }
 #endif
 
 }  // namespace jeteditor::app
-
-#endif  // !defined(__APPLE__)

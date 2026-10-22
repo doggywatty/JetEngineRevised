@@ -27,9 +27,14 @@
 #include "folder.h"
 #include "entity.h"
 
-#include <unistd.h>
 
 #include <algorithm>
+#ifdef _WIN32
+#include <direct.h>
+#define chdir _chdir
+#else
+#include <unistd.h>
+#endif
 #include <cmath>
 #include <cstddef>
 #include <filesystem>
@@ -212,7 +217,7 @@ bool World::Open(const std::string &dataDir, jet::video::Display *glDisplay, std
         return false;
     }
     // The game reads its files by relative names, so the data folder is the working directory
-    if (chdir(dir.c_str()) != 0) {
+    if (chdir(dir.string().c_str()) != 0) {
         error = "cannot enter " + dir.string();
         return false;
     }
